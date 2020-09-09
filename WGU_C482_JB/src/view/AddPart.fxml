@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="511.0" prefWidth="443.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddPartController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c4c7c9" height="511.0" stroke="BLACK" strokeType="INSIDE" width="443.0" />
+      <Label layoutX="7.0" layoutY="65.0" text="Add Part" textFill="#172d6f">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+         <padding>
+            <Insets left="18.0" />
+         </padding>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e1cbd4" height="27.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="443.0" />
+      <Button layoutX="308.0" layoutY="453.0" mnemonicParsing="false" onAction="#onActionCancel" prefWidth="90.0" text="Cancel" />
+      <AnchorPane layoutX="57.0" layoutY="88.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="340.0" prefWidth="380.0">
+         <children>
+            <VBox prefHeight="340.0" prefWidth="360.0">
+               <children>
+                  <GridPane vgap="30.0">
+                     <children>
+                        <Label text="ID:" />
+                        <Label text="Name:" GridPane.rowIndex="1" />
+                        <Label text="Inv:" GridPane.rowIndex="2" />
+                        <Label text="Price:" GridPane.rowIndex="3" />
+                        <Label text="Max:" GridPane.rowIndex="4" />
+                        <TextField fx:id="addPartNameTxt" maxWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="addPartInvTxt" maxWidth="131.0" prefHeight="27.0" prefWidth="131.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="addPartPriceTxt" maxWidth="160.0" prefHeight="27.0" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="addPartMaxTxt" maxWidth="80.0" prefHeight="27.0" prefWidth="61.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label text="Min:" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <TextField fx:id="addPartMinTxt" maxWidth="80.0" prefHeight="27.0" prefWidth="87.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ced1d3" height="26.0" stroke="BLACK" strokeType="INSIDE" width="129.0" GridPane.columnIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Auto Gen - Disabled" wrappingWidth="102.771484375" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Arial Narrow Italic" size="13.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="7.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Label fx:id="machineIDOrCompanyName" layoutX="10.0" layoutY="248.0" text="Machine ID:" GridPane.rowIndex="5" />
+                        <TextField fx:id="addPartIdOrNameTxt" layoutX="107.0" layoutY="243.0" maxWidth="95.0" prefHeight="27.0" prefWidth="83.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="120.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="130.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="130.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="130.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </children>
+               <padding>
+                  <Insets left="10.0" top="20.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <Button layoutX="202.0" layoutY="453.0" mnemonicParsing="false" onAction="#onActionSave" prefWidth="90.0" text="Save" />
+      <RadioButton fx:id="addPartInHouseRBtn" layoutX="127.0" layoutY="65.0" mnemonicParsing="false" onAction="#onActionRBtnChange" selected="true" text="In-House">
+         <toggleGroup>
+            <ToggleGroup fx:id="InOut" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="addPartOutsourcedRBtn" layoutX="232.0" layoutY="65.0" mnemonicParsing="false" onAction="#onActionRBtnChange" text="Outsourced" toggleGroup="$InOut" />
+   </children>
+</AnchorPane>
